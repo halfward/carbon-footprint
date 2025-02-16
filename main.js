@@ -73,7 +73,7 @@ document.addEventListener("DOMContentLoaded", function() {
 // Quiz logic------------------------------------------------
 // Embodied carbon emissions
 const embodiedCarbon = {
-    reinforcedConcrete: 45,
+    concrete: 45,
     steel: 70,
     shippingContainer: 36,
     curtainWall: 49,
@@ -85,7 +85,7 @@ const embodiedCarbon = {
 };
 // Budget levels
 const budgetLevels = {
-    reinforcedConcrete: 5,
+    concrete: 5,
     steel: 5,
     shippingContainer: 5,
     curtainWall: 5,
@@ -107,7 +107,7 @@ function getRandomYears() {
 function calculateOperationalCarbon(material, years) {
     // Define decay factors for each material type (adjust as necessary)
     const decayFactor = 
-        material === 'reinforcedConcrete' ? 1.5 :
+        material === 'concrete' ? 1.5 :
         material === 'steel' ? 0.2 :
         material === 'shippingContainer' ? 6.6 :
         material === 'curtainWall' ? 0.02 : 
@@ -161,7 +161,7 @@ function updateAllValues() {
     const randomYears = getRandomYears(); // Generate random years of operation
 
     // Calculate the carbon emissions for each material
-    const reinforcedConcreteTotal = calculateTotalCarbon('reinforcedConcrete', randomYears);
+    const concreteTotal = calculateTotalCarbon('concrete', randomYears);
     const steelTotal = calculateTotalCarbon('steel', randomYears);
     const shippingContainerTotal = calculateTotalCarbon('shippingContainer', randomYears);
     const curtainWallTotal = calculateTotalCarbon('curtainWall', randomYears);
@@ -177,7 +177,7 @@ function updateAllValues() {
     document.getElementById("randomValue").innerText = `Projected Building Lifecycle: ${randomYears} years`;
 
     // Display the material carbon emissions
-    document.getElementById("reinforcedConcreteValue").innerText = `Reinforced Concrete Carbon Emissions: ${reinforcedConcreteTotal.toFixed(2)} tons`;
+    document.getElementById("concreteValue").innerText = `Reinforced Concrete Carbon Emissions: ${concreteTotal.toFixed(2)} tons`;
     document.getElementById("steelValue").innerText = `Steel Carbon Emissions: ${steelTotal.toFixed(2)} tons`;
     document.getElementById("shippingContainerValue").innerText = `shippingContainer Carbon Emissions: ${shippingContainerTotal.toFixed(2)} tons`;
     document.getElementById("curtainWallValue").innerText = `Curtain Wall Carbon Emissions: ${curtainWallTotal.toFixed(2)} tons`;
@@ -190,7 +190,7 @@ function updateAllValues() {
     document.getElementById("carbonCaptureValue").innerText = `Carbon Capture Systems Carbon Absorption: ${carbonCaptureAbsorption.toFixed(2)} tons`;
 
     // Display all elements' values for the selected year
-    displayAllElementsValues(randomYears, reinforcedConcreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption);
+    displayAllElementsValues(randomYears, concreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption);
 
     // Update the total emission and budget after the random generation
     updateTotalEmissionAndBudget(randomYears);
@@ -202,13 +202,14 @@ function updateAllValues() {
 
 
 // Function to display all the elements' values for the year
-function displayAllElementsValues(years, reinforcedConcreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption) {
+function displayAllElementsValues(years, concreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption) {
     // Structure values display
     document.getElementById("structureValues").innerHTML = `
+        <br>
         <p><strong>Structure:</strong></p>
         <ul>
             <li>Shipping Container: ${shippingContainerTotal.toFixed(2)} tons</li>
-            <li>Concrete: ${reinforcedConcreteTotal.toFixed(2)} tons</li>
+            <li>Concrete: ${concreteTotal.toFixed(2)} tons</li>
             <li>Steel: ${steelTotal.toFixed(2)} tons</li>
         </ul>
         <br>
@@ -278,7 +279,7 @@ function updateAllValues() {
     window.currentRandomYears = randomYears; // Store the random years in a global variable
 
     // Calculate the carbon emissions for each material
-    const reinforcedConcreteTotal = calculateTotalCarbon('reinforcedConcrete', randomYears);
+    const concreteTotal = calculateTotalCarbon('concrete', randomYears);
     const steelTotal = calculateTotalCarbon('steel', randomYears);
     const shippingContainerTotal = calculateTotalCarbon('shippingContainer', randomYears);
     const curtainWallTotal = calculateTotalCarbon('curtainWall', randomYears);
@@ -294,7 +295,7 @@ function updateAllValues() {
     document.getElementById("randomValue").innerText = `Projected Building Lifecycle: ${randomYears} years`;
 
     // // Display the material carbon emissions
-    // document.getElementById("reinforcedConcreteValue").innerText = `Reinforced Concrete Carbon Emissions: ${reinforcedConcreteTotal.toFixed(2)} tons`;
+    // document.getElementById("concreteValue").innerText = `Reinforced Concrete Carbon Emissions: ${concreteTotal.toFixed(2)} tons`;
     // document.getElementById("steelValue").innerText = `Steel Carbon Emissions: ${steelTotal.toFixed(2)} tons`;
     // document.getElementById("shippingContainerValue").innerText = `shippingContainer Carbon Emissions: ${shippingContainerTotal.toFixed(2)} tons`;
     // document.getElementById("curtainWallValue").innerText = `Curtain Wall Carbon Emissions: ${curtainWallTotal.toFixed(2)} tons`;
@@ -307,7 +308,7 @@ function updateAllValues() {
     // document.getElementById("carbonCaptureValue").innerText = `Carbon Capture Systems Carbon Absorption: ${carbonCaptureAbsorption.toFixed(2)} tons`;
 
     // Display all elements' values for the selected year
-    displayAllElementsValues(randomYears, reinforcedConcreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption);
+    displayAllElementsValues(randomYears, concreteTotal, steelTotal, shippingContainerTotal, curtainWallTotal, compositePanelTotal, corkCladdingTotal, awningShutterAbsorption, greenRoofAbsorption, carbonCaptureAbsorption);
 
     // Update the total emission and budget after the random generation
     updateTotalEmissionAndBudget();
@@ -344,7 +345,7 @@ function findLowestCarbonCombination(years, budgetLevel) {
     let bestCombination = { structure: null, facade: null, sustainability: null };
 
     const materials = {
-        structure: ['reinforcedConcrete', 'steel', 'shippingContainer'],
+        structure: ['concrete', 'steel', 'shippingContainer'],
         facade: ['curtainWall', 'compositePanel', 'corkCladding'],
         sustainability: ['awningShutter', 'greenRoof', 'carbonCapture']
     };
@@ -396,29 +397,23 @@ function findLowestCarbonCombination(years, budgetLevel) {
             <p class="results-total"><strong>Net Carbon:</strong> ${netCarbon} tons</p><br>
         </div>
         <br>
-        <div id="category-container">
-            <div class="category structure">
-                <h3>Structure</h3>
-                <div class="option">
-                    ${bestCombination.structure}
-                    <br>
-                    (${structureEmissions} tons)
+        <div id="category-container" style="flex-direction: column; gap: 6px;">
+            <div class="category structure category-row">
+                <h3>Structure: </h3>
+                <div class="option option-row">
+                    ${bestCombination.structure}: ${structureEmissions} tons
                 </div>
             </div>
-            <div class="category facade">
-                <h3>Facade</h3>
-                <div class="option">
-                    ${bestCombination.facade}
-                    <br>
-                    (${facadeEmissions} tons)
+            <div class="category facade category-row">
+                <h3>Facade: </h3>
+                <div class="option option-row">
+                    ${bestCombination.facade}: ${facadeEmissions} tons
                 </div>
             </div>
-            <div class="category sustainability">
-                <h3>Sustainability</h3>
-                <div class="option">
-                    ${bestCombination.sustainability}
-                    <br>
-                    (${sustainabilityEmissions} tons, Absorption: ${sustainabilityAbsorption} tons)
+            <div class="category sustainability category-row">
+                <h3>Sustainability: </h3>
+                <div class="option option-row">
+                    ${bestCombination.sustainability}: (${sustainabilityEmissions} - ${sustainabilityAbsorption}) = ${(sustainabilityEmissions - sustainabilityAbsorption).toFixed(2)} tons
                 </div>
             </div>
         </div>

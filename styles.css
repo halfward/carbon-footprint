@@ -35,6 +35,8 @@ h1 {
     font-size: 2.3rem;
     margin: 0 auto;
     font-weight: 900;
+    background-color: #f4f4f9;
+    z-index: 2000;
 }
 h2 {
     font-size: 0.8rem;
@@ -42,6 +44,8 @@ h2 {
     margin: 0 auto;
     text-align: center;
     color: gray;
+    background-color: #f4f4f9;
+    z-index: 2000;
 }
 h3 {
     font-size: 20px;
@@ -134,7 +138,16 @@ button:hover {
 .sustainability {
     background-color: rgb(224, 255, 186);
 }
-
+.category-row {
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    width: calc(100% - 20px);
+    align-items: center;
+}
+.option-row {
+    margin-left: 20px;
+}
 
 .button-container {
     display: flex;
@@ -220,18 +233,21 @@ button:hover {
     font-size: 1rem;
     margin: 0;
 }
-
 #results {
     margin-top: 30px;
-
 }
-
+#note {
+    margin-top: 50px;
+    font-family: Inter, sans-serif;
+    font-size: 1rem;
+}
 
 
 #qr-code {
     position: absolute;
     width: 60px;
     left: 20px;
+    z-index: 1000;
     transition: width 0.3s ease;
 }
 #qr-code:hover {

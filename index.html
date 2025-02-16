@@ -15,7 +15,7 @@
         <h1>
             CARBON QUEST
         </h1>
-        <h2 style="margin: auto 0;">
+        <h2>
             Pick the perfect materials for a sustainable house.
         </h2>
         <div id="quiz-header">
@@ -41,7 +41,7 @@
                         Shipping Container
                     </div>
                     <div class="option">
-                        <input type="radio" id="reinforcedConcreteValue" name="structure" value="reinforcedConcrete">
+                        <input type="radio" id="reinforcedConcreteValue" name="structure" value="concrete">
                         Concrete
                     </div>
                     <div class="option">
@@ -115,6 +115,9 @@
                     <div id="structureValues"></div>
                     <div id="facadeValues"></div>
                     <div id="sustainabilityValues"></div>
+                </div>
+                <div id="note">
+                    For this site, operational carbon is calculated as embodiedCarbon[material] * Math.log1p(decayFactor * years). While the rate of increase in operational carbon slows over time, a higher decay factor results in a faster initial increase in emissions.
                 </div>
             </div>
         </div>
