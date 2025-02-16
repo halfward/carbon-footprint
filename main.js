@@ -227,9 +227,9 @@ function displayAllElementsValues(years, reinforcedConcreteTotal, steelTotal, sh
     document.getElementById("sustainabilityValues").innerHTML = `
         <p><strong>Sustainability:</strong></p>
         <ul>
-            <li>Awnings & Shutters: (32 -${awningShutterAbsorption.toFixed(2)}) = ${32-awningShutterAbsorption.toFixed(2)} tons</li>
-            <li>Green Roof: (37 - ${greenRoofAbsorption.toFixed(2)}) tons</li>
-            <li>Carbon Capture: (164 -${carbonCaptureAbsorption.toFixed(2)}) tons</li>
+            <li>Awnings & Shutters: (32 -${awningShutterAbsorption.toFixed(2)}) = ${(32-awningShutterAbsorption).toFixed(2)} tons</li>
+            <li>Green Roof: (37 - ${greenRoofAbsorption.toFixed(2)}) = ${(37-greenRoofAbsorption).toFixed(2)} tons</li>
+            <li>Carbon Capture: (164 -${carbonCaptureAbsorption.toFixed(2)}) = ${(164-carbonCaptureAbsorption).toFixed(2)} tons</li>
         </ul>
     `;
 }

@@ -20,7 +20,7 @@ body {
 
 #main-content {
     height: 100vh;
-    overflow-y: scroll;
+    overflow: scroll;
 }
 .container {
     width: 80%;
@@ -192,7 +192,7 @@ button:hover {
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 20px;
-    left: 200px;
+    left: 180px;
 }
 .answer {
     display: flex;
@@ -225,10 +225,22 @@ button:hover {
     margin-top: 30px;
 
 }
+
+
+
+#qr-code {
+    position: absolute;
+    width: 80px;
+    left: 20px;
+    transition: width 0.3s ease;
+}
+#qr-code:hover {
+    width: 400px;
+}
 footer {
     position: fixed;
     bottom: 0;
-    width: calc(100vw - 40px); 
+    width: 100vw; 
     display: flex;
     justify-content: center;
     text-align: center; 
