@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Embodied vs. Operational Energy/Carbon</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<header>
+    <div id="page-title">
+        <h1>
+            CARBON QUEST
+        </h1>
+        <h2 style="margin: auto 0;">
+            Pick the perfect materials for a sustainable house.
+        </h2>
+        <div id="quiz-header">
+            <button id="generateRandom">START/RESET PROJECT</button>
+            <div id="statement">
+                <div id="randomValue">
+                    Projected Building Lifecycle:
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+<body>
+    <div id="main-content">
+        <div id="category-container" style="margin-top: 180px;">
+            <!-- Structure Selection -->
+            <div class="category structure">
+                <h3 style="text-align: center;">Structure</h3>
+                <div class="button-container">
+                    <div class="option">
+                        <input type="radio" id="woodValue" name="structure" value="shippingContainer">
+                        Shipping Container
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="reinforcedConcreteValue" name="structure" value="reinforcedConcrete">
+                        Concrete
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="steelValue" name="structure" value="steel">
+                        Steel
+                    </div>
+                </div>
+            </div>
+
+            <!-- Facade Selection -->
+            <div class="category facade">
+                <h3 style="text-align: center;">Facade</h3>
+                <div class="button-container">
+                    <div class="option">
+                        <input type="radio" id="woodenFacadeValue" name="facade" value="corkCladding">
+                        Cork Cladding
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="brickFacadeValue" name="facade" value="compositePanel">
+                        Composite Panels
+                    </div>
+                    <div class="option" >
+                        <input type="radio" id="curtainWallValue" name="facade" value="curtainWall">
+                        Low-E Curtain Wall
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sustainability Selection -->
+            <div class="category sustainability">
+                <h3 style="text-align: center;">Sustainability</h3>
+                <div class="button-container">
+                    <div class="option">
+                        <input type="radio" id="solarPanelsValue" name="sustainability" value="awningShutter">
+                        Awnings & Shutters
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="greenRoofValue" name="sustainability" value="greenRoof">
+                        Green Roof
+                    </div>
+                    <div class="option">
+                        <input type="radio" id="carbonCaptureValue" name="sustainability" value="carbonCapture">
+                        Carbon Capture
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+        <div style="display: flex; justify-content: center;">
+            <button class="answer" id="revealAnswer">REVEAL ANSWER</button>
+        </div>
+
+        <div class="results-box">
+            <div class="results-container">
+                <div class="results-header">
+                    <h3>Your Combination</h3>
+                    <div class="results-total" id="totalCarbon">
+                        <p><strong>Net Carbon:</strong></p>
+                    </div>
+                </div>
+            </div>
+            <div class="results-container">
+                <div id="lowestCarbonResult">
+                    <h3>Best Combination</h3>
+                </div>
+            </div>
+            <div class="results-container" style="margin-bottom: 120px;">
+                <div id="carbonEmissionsContainer">
+                    <h3>Projected Carbon Emissions</h3>
+                    <div id="structureValues"></div>
+                    <div id="facadeValues"></div>
+                    <div id="sustainabilityValues"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="main.js"></script>
+</body>
+<footer>
+    <p style="font-size: 0.65rem;">
+        <b>
+            This project was created for GSAPP's Footprint: Carbon & Design, Spring 2025 class.<br>
+            Made by Group 1: Embodied vs. Operational Energy/Carbon.
+        </b>
+        <br><br>
+        <b>Disclaimer:</b><br> The carbon values presented for each material or structure are highly speculative and intended solely as a proof of concept for this presentation. They should not be used for real-world calculations, assessments, or references.
+    </p>
+</footer>
+</html>
