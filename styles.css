@@ -167,7 +167,7 @@ button:hover {
 .results-container {
     margin: 0 auto;
     margin-top: 10px;
-    width: 600px;
+    max-width: 600px;
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -230,7 +230,7 @@ button:hover {
 
 #qr-code {
     position: absolute;
-    width: 80px;
+    width: 60px;
     left: 20px;
     transition: width 0.3s ease;
 }
